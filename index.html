@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Desirée Honoré | Tech x Design Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- snake bckgrnd -->
+  <canvas id="snake-canvas"></canvas>
+
+  <!-- nav -->
+  <nav id="main-nav">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">Desirée Honore's Portfolio</a>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#work">Work</a>
+        <a href="#contact" class="nav-cta">Say Hello</a>
+      </div>
+      <button class="mobile-toggle" id="menu-toggle" aria-label="Toggle menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- social icons (right) -->
+  <div class="hero-social">
+  <!-- github -->
+  <a href="https://github.com/desireehonore" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+    </svg>
+  </a>
+
+  <!-- LinkedIn -->
+  <a href="https://www.linkedin.com/in/desireehonore" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+      <rect width="4" height="12" x="2" y="9"/>
+      <circle cx="4" cy="4" r="2"/>
+    </svg>
+  </a>
+
+   <!-- leetcode -->
+  <a href="https://www.leetcode.com/u/DesireeHonore" target="_blank" rel="noopener noreferrer" aria-label="LeetCode">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M16.5 3 9 10.5"/>
+      <path d="M21 12A9 9 0 1 1 12 3"/>
+      <path d="M8 12h8"/>
+    </svg>
+  </a>
+
+  <!-- you've got mail -->
+  <a href="mailto:honoredesiree@gmail.com" aria-label="Email">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M4 4h16v16H4z"/>
+      <path d="m22 6-10 7L2 6"/>
+    </svg>
+  </a>
+</div>
+
+  <!-- hero (two-columns) -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h1>Creative <span class="gray">Web Developer</span><br> <span class="gray"></span></h1>
+        <p class="hero-desc">I spend half my time in the world of logic and algorithms and the other half deliberately carving out space for art; I have to force it into my routine, or I risk losing the very thing that makes my work human. 
+          My name is Desirée Francheska Honoré and I’m an Emerging Media & Computer Science student living in New York. I've always been curious about how things work, especially when it comes to code and design. I’m especially interested in the space where 
+          creativity meets technology and look forward to exploring more of what connects the two. This site is my little corner of the internet where I share what I’m learning, reading, building, and experimenting with. Thanks for stopping by, 
+          feel free to explore, and maybe even learn something new alongside me. -Des
+            </p>
+      </div>
+      <div class="hero-photo">
+        <img src="main_photo2.jpg" alt="Creative designer at work" onerror="this.src='https://placehold.co/800x1000/f5f0eb/908880?text=Photo'">
+      </div>
+    </div>
+  </section>
+
+  <!-- available -->
+  <div class="available-bar">
+    <span class="dot"></span>
+    <span>Available for new projects</span>
+  </div>
+
+  <!-- stats -->
+  <section class="stats-section">
+    <div class="stats-section-inner">
+      <div class="stats-grid" id="stats-grid"></div>
+    </div>
+  </section>
+
+  <!-- selected work -->
+  <section class="work" id="work">
+    <div class="work-inner">
+      <div class="section-header">
+        <h2>Selected Work</h2>
+        <p>A curated collection of projects where technology meets thoughtful design.</p>
+      </div>
+      <div class="projects-grid" id="projects-grid"></div>
+    </div>
+  </section>
+
+  <!-- (details...hidden by default) -->
+  <div class="project-page" id="project-page">
+    <div class="project-page-inner">
+      <button class="back-btn" id="back-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+        Back to Work
+      </button>
+      <div class="project-page-hero" id="project-page-hero"></div>
+      <div class="project-page-header" id="project-page-header"></div>
+      <div class="project-page-body" id="project-page-body"></div>
+    </div>
+  </div>
+
+  <!-- contact me -->
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <div class="contact-card">
+        <h2>Let's Create Something<br>Amazing Together</h2>
+        <p>Have a project in mind? I'd love to hear about it.</p>
+        <a href="mailto:honoredesiree@gmail.com" class="contact-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          Start a Conversation
+          <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer>
+    <div class="footer-inner">
+      <p>&copy; <span id="year"></span> All rights reserved.</p>
+      <div class="social-links">
+        <a href="https://github.com/desireehonore" class="social-link" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></a>
+        <a href="https://www.linkedin.com/in/desireehonore" class="social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+        <a href="mailto:honoredesiree@gmail.com" class="social-link" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+<script>
+/* arcade snake game background */
+(function() {
+  var CELL = 16;
+  var SNAKE_COLOR = '#e84393';
+  var FOOD_COLOR  = '#fd79a8';
+  var GRID_STROKE = 'rgba(0, 0, 0, 0.04)';
+  var EYE_COLOR   = '#ffffff';
+
+  var oppositeDir = { up:'down', down:'up', left:'right', right:'left' };
+  var dirVec = {
+    up:   { x: 0, y:-1 }, down: { x: 0, y: 1 },
+    left: { x:-1, y: 0 }, right:{ x: 1, y: 0 }
+  };
+
+  function ptEq(a, b) { return a.x === b.x && a.y === b.y; }
+
+  function spawnFood(gw, gh, snake, food) {
+    var taken = {};
+    snake.concat(food).forEach(function(p) { taken[p.x+','+p.y] = true; });
+    var pt, n = 0;
+    do { pt = { x: Math.floor(Math.random()*gw), y: Math.floor(Math.random()*gh) }; n++; }
+    while (taken[pt.x+','+pt.y] && n < 200);
+    return pt;
+  }
+
+  function makeSnake(gw, gh) {
+    var cx = Math.floor(gw/2), cy = Math.floor(gh/2);
+    var body = [];
+    for (var i = 0; i < 5; i++) body.push({ x: cx - i, y: cy });
+    return body;
+  }
+
+  function resetSnake(st) {
+    st.snake = makeSnake(st.gridW, st.gridH);
+    st.direction = 'right';
+    st.nextDirection = 'right';
+  }
+
+  function initState(w, h) {
+    var gw = Math.floor(w/CELL), gh = Math.floor(h/CELL);
+    var snake = makeSnake(gw, gh);
+    var food = [];
+    for (var i = 0; i < 3; i++) food.push(spawnFood(gw, gh, snake, food));
+    return {
+      snake: snake, direction: 'right', nextDirection: 'right',
+      food: food, score: 0, lastTick: 0,
+      gridW: gw, gridH: gh, width: w, height: h,
+      flashUntil: 0, autoTarget: null
+    };
+  }
+
+  function pickAutoDirection(st) {
+    var head = st.snake[0];
+    var gw = st.gridW, gh = st.gridH, snake = st.snake;
+    var nearest = null, best = Infinity;
+    st.food.forEach(function(f) {
+      var d = Math.abs(f.x - head.x) + Math.abs(f.y - head.y);
+      if (d < best) { best = d; nearest = f; }
+    });
+    st.autoTarget = nearest;
+    var tail = snake[snake.length - 1];
+    var occupied = {};
+    snake.forEach(function(p) { occupied[p.x+','+p.y] = true; });
+
+    var dirs = ['up','down','left','right'];
+    var valid = dirs.filter(function(dir) {
+      if (dir === oppositeDir[st.direction]) return false;
+      var v = dirVec[dir];
+      var nx = head.x + v.x, ny = head.y + v.y;
+      if (nx < 0 || nx >= gw || ny < 0 || ny >= gh) return false;
+      if (nx === tail.x && ny === tail.y) return true;
+      return !occupied[nx+','+ny];
+    });
+
+    if (valid.length === 0) return st.direction;
+    if (nearest) {
+      valid.sort(function(a, b) {
+        var va = dirVec[a], vb = dirVec[b];
+        var da = Math.abs(nearest.x - (head.x+va.x)) + Math.abs(nearest.y - (head.y+va.y));
+        var db = Math.abs(nearest.x - (head.x+vb.x)) + Math.abs(nearest.y - (head.y+vb.y));
+        return da - db;
+      });
+    }
+    return valid[0];
+  }
+
+  function drawCell(ctx, pt, color, alpha) {
+    ctx.fillStyle = color;
+    ctx.globalAlpha = alpha;
+    ctx.fillRect(pt.x*CELL+1, pt.y*CELL+1, CELL-2, CELL-2);
+    ctx.globalAlpha = 1;
+  }
+
+  function drawFoodGlow(ctx, pt, time, color, idx) {
+    var cx = pt.x*CELL + CELL/2, cy = pt.y*CELL + CELL/2;
+    var pulse = 0.7 + 0.3 * Math.sin(time*0.004 + idx*2.1);
+    var r = CELL * 1.2 * pulse;
+    var g = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
+    g.addColorStop(0, color + '44');
+    g.addColorStop(0.5, color + '22');
+    g.addColorStop(1, color + '00');
+    ctx.fillStyle = g;
+    ctx.fillRect(cx-r, cy-r, r*2, r*2);
+    ctx.fillStyle = color;
+    ctx.fillRect(Math.floor(cx-4), Math.floor(cy-4), 8, 8);
+    ctx.fillStyle = color;
+    ctx.globalAlpha = 0.7 * pulse;
+    ctx.fillRect(Math.floor(cx-12), Math.floor(cy-4), 8, 8);
+    ctx.fillRect(Math.floor(cx+4), Math.floor(cy-4), 8, 8);
+    ctx.fillRect(Math.floor(cx-4), Math.floor(cy-12), 8, 8);
+    ctx.fillRect(Math.floor(cx-4), Math.floor(cy+4), 8, 8);
+    ctx.globalAlpha = 1;
+  }
+
+  var canvas = document.getElementById('snake-canvas');
+  var state = null;
+  var raf = 0;
+
+  function handleResize() {
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var w = window.innerWidth, h = window.innerHeight;
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    canvas.style.width = w + 'px';
+    canvas.style.height = h + 'px';
+    var ctx = canvas.getContext('2d');
+    if (ctx) ctx.scale(dpr, dpr);
+
+    if (state) {
+      state.width = w; state.height = h;
+      var nw = Math.floor(w/CELL), nh = Math.floor(h/CELL);
+      if (nw !== state.gridW || nh !== state.gridH) {
+        state.gridW = nw; state.gridH = nh;
+        for (var i = 0; i < state.food.length; i++) {
+          var f = state.food[i];
+          if (f.x >= nw || f.y >= nh) state.food[i] = spawnFood(nw, nh, state.snake, state.food);
+        }
+        var hd = state.snake[0];
+        if (hd.x >= nw || hd.y >= nh) resetSnake(state);
+      }
+    } else {
+      state = initState(w, h);
+    }
+  }
+
+  function gameLoop(time) {
+    if (!state) { raf = requestAnimationFrame(gameLoop); return; }
+    var ctx = canvas.getContext('2d');
+    if (!ctx) return;
+    var w = state.width, h = state.height, gw = state.gridW, gh = state.gridH;
+    var flashing = time < state.flashUntil;
+
+    if (time - state.lastTick >= 80) {
+      state.lastTick = time;
+      state.direction = state.nextDirection;
+      state.direction = pickAutoDirection(state);
+      state.nextDirection = state.direction;
+      var head = state.snake[0], vec = dirVec[state.direction];
+      var next = { x: head.x + vec.x, y: head.y + vec.y };
+      var hitWall = next.x < 0 || next.x >= gw || next.y < 0 || next.y >= gh;
+      var ateFood = !hitWall && state.food.some(function(f) { return ptEq(f, next); });
+      var hitSelf = !hitWall && state.snake.some(function(s, i) {
+        return (ateFood || i < state.snake.length - 1) && ptEq(s, next);
+      });
+
+      if (hitWall || hitSelf) {
+        state.flashUntil = time + 300;
+        resetSnake(state);
+      } else {
+        state.snake.unshift(next);
+        var fi = -1;
+        for (var i = 0; i < state.food.length; i++) {
+          if (ptEq(state.food[i], next)) { fi = i; break; }
+        }
+        if (fi >= 0) { state.score += 10; state.food[fi] = spawnFood(gw, gh, state.snake, state.food); }
+        else state.snake.pop();
+      }
+    }
+
+    ctx.clearRect(0, 0, w, h);
+    if (flashing) {
+      var t = (state.flashUntil - time) / 300;
+      ctx.fillStyle = 'rgba(0,0,0,' + (0.08 * t) + ')';
+      ctx.fillRect(0, 0, w, h);
+    }
+
+    ctx.strokeStyle = GRID_STROKE;
+    ctx.lineWidth = 1;
+    for (var x = 0; x <= gw; x++) { ctx.beginPath(); ctx.moveTo(x*CELL, 0); ctx.lineTo(x*CELL, gh*CELL); ctx.stroke(); }
+    for (var y = 0; y <= gh; y++) { ctx.beginPath(); ctx.moveTo(0, y*CELL); ctx.lineTo(gw*CELL, y*CELL); ctx.stroke(); }
+
+    for (var i = 0; i < state.food.length; i++) drawFoodGlow(ctx, state.food[i], time, FOOD_COLOR, i);
+
+    var len = state.snake.length;
+    for (var i = len - 1; i >= 0; i--) {
+      var seg = state.snake[i];
+      var alpha = 0.3 + 0.7 * (1 - i / len);
+      if (i === 0) {
+        drawCell(ctx, seg, SNAKE_COLOR, 1);
+        var cx = seg.x*CELL + CELL/2, cy = seg.y*CELL + CELL/2;
+        var glow = ctx.createRadialGradient(cx, cy, 0, cx, cy, 24);
+        glow.addColorStop(0, SNAKE_COLOR + '33');
+        glow.addColorStop(1, SNAKE_COLOR + '00');
+        ctx.fillStyle = glow;
+        ctx.fillRect(cx-24, cy-24, 48, 48);
+        ctx.fillStyle = EYE_COLOR;
+        var ox = seg.x*CELL, oy = seg.y*CELL;
+        if (state.direction === 'right') { ctx.fillRect(ox+CELL-8, oy+4, 4, 4); ctx.fillRect(ox+CELL-8, oy+CELL-8, 4, 4); }
+        else if (state.direction === 'left') { ctx.fillRect(ox+4, oy+4, 4, 4); ctx.fillRect(ox+4, oy+CELL-8, 4, 4); }
+        else if (state.direction === 'up') { ctx.fillRect(ox+4, oy+4, 4, 4); ctx.fillRect(ox+CELL-8, oy+4, 4, 4); }
+        else { ctx.fillRect(ox+4, oy+CELL-8, 4, 4); ctx.fillRect(ox+CELL-8, oy+CELL-8, 4, 4); }
+      } else {
+        drawCell(ctx, seg, SNAKE_COLOR, alpha);
+      }
+    }
+
+    raf = requestAnimationFrame(gameLoop);
+  }
+
+  handleResize();
+  window.addEventListener('resize', handleResize);
+  raf = requestAnimationFrame(gameLoop);
+})();
+
+
+/* portfolio ui/ux */
+(function() {
+  // nav scroll 
+  window.addEventListener('scroll', function() {
+    document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  //mobile menu 
+  var menuOpen = false;
+  document.getElementById('menu-toggle').addEventListener('click', function() {
+    menuOpen = !menuOpen;
+    document.getElementById('mobile-menu').classList.toggle('open', menuOpen);
+  });
+  document.querySelectorAll('#mobile-menu a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      menuOpen = false;
+      document.getElementById('mobile-menu').classList.remove('open');
+    });
+  });
+
+  //year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  //all projects
+  var projects =[
+    { title: 'Virtual Art Installation: Cherry Blossom Tree of Life', category: 'AR/VR', description: 'A WebXR cherry blossom installation built in A-Frame, inspired by the intersection of art and technology.', tags: ['A-Frame','JavaScript'], image: 'aframe1.png', year: '2026', role: 'Immersive Experience Designer', timeline: '1 month', details: 'This piece was born out of a visit to an immersive art and tech exhibit at Mercer Labs, an experience that just stuck with me. I wanted to recreate that feeling of walking into something beautiful and then having it slowly unravel into something unexpected.\n\nI built the experience around a blooming cherry blossom Tree of Life as the anchor; serene, almost meditative at first. But the further you move through the space, the more that calm gives way to surprise and chaos. The tension between the two is the whole point. A-Frame gave me the freedom to make it feel spatial and alive, and I loved pushing what a browser-based XR experience could actually hold. <a href="https://desireehonore.github.io/CSCode/AFrame/index.html" target="_blank">Experience the installation here.</a>' },
+    { title: 'Augmented Reality Experience: Seen', category: 'AR/VR', description: 'An A-Frame augmented reality experience that puts a human face on the invisible threat of digital surveillance.', tags: ['Data Analytics','A-Frame','JavaScript'], image: 'seen.png', year: '2026', role: 'AR Developer & Designer', timeline: '2 months', details: 'Seen came from a question I couldn\'t stop thinking about: what if the thing invading your privacy wasn\'t a stranger on the internet, but the Wi-Fi signal running through your own walls? I wanted to make that invisible threat feel real and felt, not just understood.\n\nI built the world in A-Frame and populated it with characters quietly living their lives except their most private spaces are being watched through their home networks. The experience is designed to make you feel the discomfort of that exposure, to move through a world where surveillance isn\'t abstract, it\'s domestic, it\'s personal. And that\'s exactly what I wanted people to walk away feeling. <a href="https://desireehonore.github.io/DesireesPortfolio/Aframe_final2.html" target="_blank">Experience it here.</a>' },
+    { title: 'Nonlinear Story: The Eighth Month', category: 'Web Design & Dev', description: 'A nonlinear murder mystery built in HTML, CSS, and JavaScript, using the genre as a lens to explore the maternal health crisis in Sierra Leone.', tags: ['HTML','CSS','Digital Illustration & Animation'], image: 'textgame.png', year: '2026', role: 'Interactive Designer & Front-End Developer', timeline: '1 month', details: 'I\'ve always believed that the best way to get people to sit with a hard truth is to give them a story they can\'t put down. The Eighth Month started with a fact that I couldn\'t shake, that in Sierra Leone, pregnancy is one of the most life-threatening experiences a woman can face. I didn\'t want to present that as a statistic. I wanted people to feel it.\n\nSo I wrapped it in a murder mystery. Players move through the story nonlinearly, piecing together what happened while navigating grief, survival, and the weight of a system that too often fails women. I handled all of the writing, design, and development myself using HTML, CSS, and JavaScript, and every interaction was built intentionally, to make sure the gameplay never let you forget the reality underneath it. <a href="https://desireehonore.github.io/MediaPortfolio/The_Eighth_Month/index.html" target="_blank">Play the Eighth Month here.</a>' },
+    { title: 'Art x Code: p5.js Creative Work', category: 'Interactive programming', description: 'A living collection of generative art and experimental projects, all made with p5.js.', tags: ['p5.js','JavaScript','Libraries'], image: 'p5_projects.png', year: '2026', role: 'Creative Coder & Generative Artist', timeline: '5 months', details: 'I started learning p5.js because I wanted to see what would happen if I stopped separating my creative instincts from my technical ones. This collection is the result of that; a body of work that grew organically as I got more comfortable letting code be a medium, not just a tool.\n\nSome pieces are playful, some are more intentional, and a few surprised even me when they came together. The process usually starts with a simple question: what happens if I map color to movement, or let randomness build structure?...and then I just follow it. Looking at this collection as a whole, it feels like a visual journal of how my thinking around art and code has evolved. \n <a href="https://editor.p5js.org/desireehonore/sketches/uAbVOVNE1" target="_blank">p5.party Mulitplayer Games</a> \n <a href="https://editor.p5js.org/desireehonore/sketches/fvAYxdQKb" target="_blank">Fractal Tree</a> \n <a href="https://editor.p5js.org/desireehonore/sketches/5qHfux5Nd" target="_blank">Interactive Grid</a> \n <a href="https://editor.p5js.org/desireehonore/sketches/_iMwPOTjM" target="_blank">Sunrise/Sunset</a> \n <a href="https://editor.p5js.org/desireehonore/sketches/PEWbuckzE" target="_blank">Tetris</a> \n <a href="https://editor.p5js.org/desireehonore/sketches/LMj1fcrQj" target="_blank">Black Hole</a> \n <a href="https://editor.p5js.org/desireehonore/sketches/vuInt87Ze" target="_blank">Webcam</a> \n <a href="https://editor.p5js.org/desireehonore/sketches/8mMX91Rzx" target="_blank">Live Earthquake Data</a>' },
+    { title: 'Dreamweaver: The Desired Collective Beauty', category: 'Web Production', description: 'A subscription-based beauty platform designed with affordability and cultural inclusivity at its core.', tags: ['Dreamweaver', 'HTML' , 'CSS'], image: 'dreamweaver.png', year: '2026', role: 'Full-Stack Web Designer', timeline: '1 month', details: 'This project came from something I genuinely care about. The fact that quality beauty services still feel out of reach for so many people, and that mainstream beauty platforms rarely reflect the full breadth of who their users actually are. I wanted to build something that got both of those things right.\n\nI designed and developed the full site using Dreamweaver, HTML, CSS, and JavaScript, building out a subscription model that keeps costs low without sacrificing the experience. The design language was intentionally warm and inclusive, and every visual and UX decision was made with the goal of making anyone who lands on the page feel like this was built for them. It\'s the kind of platform I would have wanted to find. <a href="https://desireehonore.github.io/CSCode/DreamweaverProject/index.html" target="_blank">View it here</a>.' },
+    { title: 'App Project: The Desired Collective Travel', category: 'UX/UI', description: 'A full-concept travel app built around curated photography, intentional branding, and a deep love for extraordinary places.', tags: ['Adobe XD', 'Creative Cloud', 'Wireframes'], image: 'highres.png', year: '2026', role: 'UX/UI Designer & Brand Designer', timeline: '3 months', details: 'The Desired Collective Travel started as a personal obsession. I\'d been collecting photos, memories, and details from places I\'d visited and I wanted to build something that could hold all of it beautifully. So I designed the whole thing from the ground up: logo, iconography, nav systems, color language, and both low and high-fidelity prototypes.\n\nI worked across Adobe XD, Illustrator, and Photoshop to make sure every element felt cohesive, from the high-res photography down to the smallest icon. The goal was an app that felt as considered and curated as the destinations themselves. Every design decision was intentional, and I wanted anyone who picked it up to immediately feel like they were in the hands of someone who actually cares about the craft. <a href="https://www.dropbox.com/scl/fi/a5faz0kfpzbpxbbi5brw2/Final_App_Project_Recording.mp4?rlkey=ouxk6i5lhpyxpx32cxqhvgngu&st=g3fo7rks&dl=0" target="_blank">View the App Project here.</a>' },
+    { title: 'ReadyMag: Coachella 2026', category: 'Web Production', description: 'A visually-driven ReadyMag editorial capturing the energy, culture, and personal moments of Coachella 2026.', tags: ['ReadyMag', 'Web Design', 'Digital Publishing'], image: 'readymag.png', year: '2026', role: 'Digital Editorial Designer', timeline: '1 week', details: 'Coachella is one of those experiences where you\'re constantly thinking, I need to remember exactly this. This ReadyMag project was my way of doing that intentionally, and editorially. I didn\'t just want a photo dump; I wanted to design something that actually felt like being there.\n\nI curated the photography, built out the layout in ReadyMag, and made deliberate choices about pacing: when to let an image breathe, when to layer in text, when to let the design get a little loud. The result is part personal archive, part cultural document. It captures the fashion, the performances, the in-between moments, and the overall feeling of a weekend that\'s genuinely hard to put into words. <a href="  https://readymag.website/u3334996622/6273719/ " target="_blank">View it here.</a>' },
+    { title: 'Games', category: 'Game Development', description: 'A collection of browser-based games designed and built entirely in vanilla JavaScript.', tags: ['JavaScript', 'Phaser','p5.js'], image: 'p5_multiplayer.png', year: '2025', role: 'Front-End Developer & Game Designer', timeline: '2 years', details: 'I built this collection because I wanted to challenge myself to create full, playable experiences with nothing but JavaScript, no libraries, no game engines, just logic and creativity working together. Each game started as a concept I was genuinely excited about, and then I had to figure out how to actually make it work.\n\nThe process pushed me to think differently about interactivity: how a player feels momentum, how feedback shapes behavior, how small design decisions make a game feel tight or loose. These projects taught me more about front-end development than almost anything else I\'ve built, and they were honestly a lot of fun to make. \n\n <a href="https://editor.p5js.org/desireehonore/sketches/uAbVOVNE1" target="_blank">p5 multiplayer game</a> \n <a href="https://desireehonore.github.io/Game-Portfolio/whack-a-mole.html" target="_blank">Whack-A-Mole</a> \n <a href="https://desireehonore.github.io/Game-Portfolio/90sSimonGame.html" target="_blank">90s Simon Game</a>\n <a href="https://desireehonore.github.io/Game-Portfolio/caesar-cipher-game.html" target="_blank">Caesar Cipher Game</a>' }
+];
+
+  /* Links
+  
+  ReadyMag:
+  https://readymag.website/u3334996622/6273719/ 
+
+  A-Frame Cherry Blossoms:
+  https://desireehonore.github.io/CSCode/AFrame/index.html
+
+  A-Frame Seen:
+  https://desireehonore.github.io/DesireesPortfolio/Aframe_final2.html
+
+  Dreamweaver:
+  https://desireehonore.github.io/CSCode/DreamweaverProject/index.html
+  
+  Games:
+  https://desireehonore.github.io/Game-Portfolio/whack-a-mole.html
+  https://desireehonore.github.io/Game-Portfolio/90sSimonGame.html
+  https://desireehonore.github.io/Game-Portfolio/caesar-cipher-game.html
+  https://editor.p5js.org/desireehonore/sketches/uAbVOVNE1
+
+  App Project:
+  https://www.dropbox.com/scl/fi/a5faz0kfpzbpxbbi5brw2/Final_App_Project_Recording.mp4?rlkey=ouxk6i5lhpyxpx32cxqhvgngu&st=g3fo7rks&dl=0
+
+  Nonlinear Story:
+  https://desireehonore.github.io/MediaPortfolio/The_Eighth_Month/index.html
+  */
+
+  var grid = document.getElementById('projects-grid');
+  projects.forEach(function(p) {
+    var card = document.createElement('div');
+    card.className = 'project-card';
+    card.innerHTML =
+      '<div class="img-wrap"><img src="' + p.image + '" alt="' + p.title + '" onerror="this.src=\'https://placehold.co/800x500/f5f0eb/908880?text=' + p.title + '\'"></div>' +
+      '<div class="info">' +
+        '<div class="meta"><span class="cat">' + p.category + '</span><span class="year">' + p.year + '</span></div>' +
+        '<h3>' + p.title + '</h3>' +
+        '<p class="desc">' + p.description + '</p>' +
+        '<div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>' +
+      '</div>';
+    card.addEventListener('click', function() { showProjectPage(p); });
+    grid.appendChild(card);
+  });
+
+  //stats section
+  var stats = [
+    { value: '4+', label: 'Years Experience', url: 'resume.html' },
+    { value: '20+', label: 'Projects', url: 'projects.html' },
+    { value: '6+', label: 'Happy Clients', url: 'clients.html' },
+    { value: '2', label: 'Hackathons', url: 'hackathons.html' }
+  ];
+  var statsGrid = document.getElementById('stats-grid');
+  stats.forEach(function(s) {
+    var div = document.createElement('div');
+    div.className = 'stat-card';
+    div.innerHTML = '<a href="' + s.url + '"><div class="val">' + s.value + '</div><div class="lbl">' + s.label + '</div></a>';
+    statsGrid.appendChild(div);
+  });
+
+  //project details (hidden)
+  var mainSections = document.querySelectorAll('nav, .hero-social, .hero, .available-bar, .stats-section, .work, .contact, footer');
+  var projectPage = document.getElementById('project-page');
+  var backBtn = document.getElementById('back-btn');
+
+  function showProjectPage(p) {
+    mainSections.forEach(function(el) { el.style.display = 'none'; });
+    document.getElementById('main-nav').style.display = '';
+    projectPage.classList.add('active');
+    document.getElementById('project-page-hero').innerHTML = '<img src="' + p.image + '" alt="' + p.title + '">';
+    document.getElementById('project-page-header').innerHTML = '<span class="cat">' + p.category + ' &middot; ' + p.year + '</span><h1>' + p.title + '</h1>';
+    document.getElementById('project-page-body').innerHTML =
+      '<div class="description">' + p.details.split('\n').map(function(para) { return '<p>' + para + '</p>'; }).join('') + '</div>' +
+      '<div class="project-sidebar">' +
+        '<div class="sidebar-block"><h3>Role</h3><p>' + p.role + '</p></div>' +
+        '<div class="sidebar-block"><h3>Timeline</h3><p>' + p.timeline + '</p></div>' +
+        '<div class="sidebar-block"><h3>Tools</h3><div class="tags">' + p.tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div></div>' +
+      '</div>';
+    window.scrollTo(0, 0);
+  }
+
+
+  function hideProjectPage() {
+    projectPage.classList.remove('active');
+    mainSections.forEach(function(el) { el.style.display = ''; });
+    var workSection = document.getElementById('work');
+    if (workSection) workSection.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  backBtn.addEventListener('click', hideProjectPage);
+
+   })();
+
+
+</script>
+
+<!--sparkle rainbow cursor-->
+<script src="sparkle-cursor.js"></script>
+
+</body>
+</html>
